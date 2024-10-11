@@ -2,6 +2,13 @@
 
 由 Nuxt.js 及周边库构建的偏个人博客项目
 
+# 技术栈
+
+- UI : [NuxtUI](https://ui3.nuxt.dev)
+- CSS : [tailwindcss](https://tailwindcss.com)
+- Nuxt Modules
+  - [Nuxt Tailwind](https://tailwindcss.nuxtjs.org)
+
 ## Setup
 
 Make sure to install the dependencies:
