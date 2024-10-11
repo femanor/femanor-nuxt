@@ -1,8 +1,10 @@
 <template>
   <div>
-    <UButton loading>Button</UButton>
-    <UButton color="neutral">Button</UButton>
+    <NuxtPage></NuxtPage>
   </div>
 </template>
 
-<style></style>
+<style>
+@import 'tailwindcss';
+@import '@nuxt/ui';
+</style>

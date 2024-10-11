@@ -6,6 +6,7 @@
 
 - UI : [NuxtUI](https://ui3.nuxt.dev)
 - CSS : [tailwindcss](https://tailwindcss.com)
+- icon : [icones](https://icones.js.org/)
 - Nuxt Modules
   - [Nuxt Tailwind](https://tailwindcss.nuxtjs.org)
 
