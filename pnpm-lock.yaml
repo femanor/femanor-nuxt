@@ -11,9 +11,18 @@ dependencies:
   '@nuxt/ui':
     specifier: 3.0.0-alpha.6
     version: 3.0.0-alpha.6(embla-carousel@8.3.0)(postcss@8.4.47)(typescript@5.6.3)(vite@5.4.8)(vue@3.5.11)
+  '@pinia/nuxt':
+    specifier: ^0.5.5
+    version: 0.5.5(typescript@5.6.3)(vue@3.5.11)
   nuxt:
     specifier: ^3.13.0
     version: 3.13.2(typescript@5.6.3)(vite@5.4.8)
+  pinia:
+    specifier: ^2.2.4
+    version: 2.2.4(typescript@5.6.3)(vue@3.5.11)
+  pinia-plugin-persistedstate:
+    specifier: ^4.1.1
+    version: 4.1.1(@pinia/nuxt@0.5.5)(pinia@2.2.4)
   vue:
     specifier: latest
     version: 3.5.11(typescript@5.6.3)
@@ -2032,6 +2041,21 @@ packages:
       '@parcel/watcher-win32-x64': 2.4.1
     dev: false
 
+  /@pinia/nuxt@0.5.5(typescript@5.6.3)(vue@3.5.11):
+    resolution: {integrity: sha512-wjxS7YqIesh4OLK+qE3ZjhdOJ5pYZQ+VlEmZNtTwzQn1Kavei/khovx7mzXVXNA/mvSPXVhb9xBzhyS3XMURtw==}
+    dependencies:
+      '@nuxt/kit': 3.13.2(magicast@0.3.5)
+      pinia: 2.2.4(typescript@5.6.3)(vue@3.5.11)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - magicast
+      - rollup
+      - supports-color
+      - typescript
+      - vue
+      - webpack-sources
+    dev: false
+
   /@pkgjs/parseargs@0.11.0:
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
@@ -3690,6 +3714,10 @@ packages:
   /deep-equal@1.0.1:
     resolution: {integrity: sha512-bHtC0iYvWhyaTzvV3CZgPeZQqCOBGyGsVV7v4eevpdkLHfiSrXUdBG+qAuSz4RI70sszvjQ1QSZ98An1yNwpSw==}
     dev: true
+
+  /deep-pick-omit@1.2.1:
+    resolution: {integrity: sha512-2J6Kc/m3irCeqVG42T+SaUMesaK7oGWaedGnQQK/+O0gYc+2SP5bKh/KKTE7d7SJ+GCA9UUE1GRzh6oDe0EnGw==}
+    dev: false
 
   /deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
@@ -5828,6 +5856,48 @@ packages:
   /pify@2.3.0:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
+
+  /pinia-plugin-persistedstate@4.1.1(@pinia/nuxt@0.5.5)(pinia@2.2.4):
+    resolution: {integrity: sha512-fUiUsbfBetGUZzX28z+ImAZw7FDXzwRrk+fN+ljF5OhQMhsSYfYeUzI9FLLtpjekYbfFHWvJiECkLI60RIuiPA==}
+    peerDependencies:
+      '@pinia/nuxt': '>=0.5.0'
+      pinia: '>=2.0.0'
+    peerDependenciesMeta:
+      '@pinia/nuxt':
+        optional: true
+      pinia:
+        optional: true
+    dependencies:
+      '@nuxt/kit': 3.13.2(magicast@0.3.5)
+      '@pinia/nuxt': 0.5.5(typescript@5.6.3)(vue@3.5.11)
+      deep-pick-omit: 1.2.1
+      defu: 6.1.4
+      destr: 2.0.3
+      pinia: 2.2.4(typescript@5.6.3)(vue@3.5.11)
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
+      - webpack-sources
+    dev: false
+
+  /pinia@2.2.4(typescript@5.6.3)(vue@3.5.11):
+    resolution: {integrity: sha512-K7ZhpMY9iJ9ShTC0cR2+PnxdQRuwVIsXDO/WIEV/RnMC/vmSoKDTKW/exNQYPI+4ij10UjXqdNiEHwn47McANQ==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.6.4
+      typescript: 5.6.3
+      vue: 3.5.11(typescript@5.6.3)
+      vue-demi: 0.14.10(vue@3.5.11)
+    dev: false
 
   /pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
