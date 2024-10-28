@@ -1,6 +1,7 @@
-// 配置公共变量
+// 配置公共变量，运行时配置
 export default defineAppConfig({
   title: 'Hello Nuxt',
+  helloMessage: '欢迎回来，前端庄园技术社区',
   theme: {
     dark: true,
     colors: {

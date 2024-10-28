@@ -3,8 +3,10 @@
 </template>
 
 <script setup lang="ts">
-import { useUser } from '~/store/user'
-
+// import { useUser } from '~/store/user'
+useHead({
+  title: '登录'
+})
 const router = useRouter()
 const store = useUser()
 const { isLogin } = storeToRefs(store)

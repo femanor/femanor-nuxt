@@ -12,7 +12,14 @@
         <UButton icon="logos:github-icon" size="xl" variant="ghost" class="cursor-pointer" color="neutral" to="https://www.baidu.com" target="_black" />
 
         <UDropdownMenu :items="items" class="w-48">
-          <UAvatar src="https://github.com/benjamincanac.png" class="ml-3 cursor-pointer" />
+          <UAvatar src="https://foruda.gitee.com/avatar/1677152235246657276/8845783_w857669126_1640567606.png" class="ml-3 cursor-pointer" />
+
+          <template #profile="{ item }">
+            <div class="flex items-center flex-1" @click="console.log('11222333')">
+              <UIcon name="i-heroicons-arrow-right-on-rectangle" class="mr-2 text-[var(--ui-text-muted)] hover:text-black" />
+              <div class="self-start">{{ item.label }}</div>
+            </div>
+          </template>
         </UDropdownMenu>
       </div>
     </div>
@@ -89,29 +96,29 @@ const items = ref([
       kbds: ['meta', 'n']
     }
   ],
+  // [
+  //   {
+  //     label: 'GitHub',
+  //     icon: 'i-simple-icons-github',
+  //     to: 'https://github.com/nuxt/ui',
+  //     target: '_blank'
+  //   },
+  //   {
+  //     label: 'Support',
+  //     icon: 'i-heroicons-lifebuoy',
+  //     to: '/components/dropdown-menu'
+  //   },
+  //   {
+  //     label: 'API',
+  //     icon: 'i-heroicons-cloud',
+  //     disabled: true
+  //   }
+  // ],
   [
     {
-      label: 'GitHub',
-      icon: 'i-simple-icons-github',
-      to: 'https://github.com/nuxt/ui',
-      target: '_blank'
-    },
-    {
-      label: 'Support',
-      icon: 'i-heroicons-lifebuoy',
-      to: '/components/dropdown-menu'
-    },
-    {
-      label: 'API',
-      icon: 'i-heroicons-cloud',
-      disabled: true
-    }
-  ],
-  [
-    {
-      label: 'Logout',
+      label: '退出登录',
       icon: 'i-heroicons-arrow-right-on-rectangle',
-      kbds: ['shift', 'meta', 'q']
+      slot: 'profile'
     }
   ]
 ])

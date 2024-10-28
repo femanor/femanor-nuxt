@@ -6,19 +6,24 @@
 
 <script setup lang="ts">
 import { ElNotification } from 'element-plus'
-import { useUser } from '~/store/user'
+// import { useUser } from '~/store/user'
+
+useHead({
+  title: '首页'
+})
 
 const router = useRouter()
 const store = useUser()
 const { isLogin, hello, userName } = storeToRefs(store)
-console.log('object', isLogin.value)
+const appConfig = useAppConfig()
+
 if (!isLogin.value) {
   navigateTo('/login')
 }
 if (!hello.value) {
   ElNotification({
     title: '你好' + userName.value,
-    message: '欢迎光临，前端庄园技术社区'
+    message: appConfig.helloMessage
   })
   hello.value = true
 }
