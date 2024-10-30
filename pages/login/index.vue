@@ -1,9 +1,8 @@
 <template>
-  <div @click="handleLogin">登录</div>
+  <div @click="handleLogin" class="text-orange-400 text-2xl">登录</div>
 </template>
 
 <script setup lang="ts">
-// import { useUser } from '~/store/user'
 useHead({
   title: '登录'
 })
