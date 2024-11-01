@@ -43,8 +43,12 @@ export default defineNuxtConfig({
         ]
       }
     ],
-    'pinia-plugin-persistedstate/nuxt'
+    'pinia-plugin-persistedstate/nuxt',
+    '@nuxthub/core'
   ],
+  hub: {
+    // NuxtHub options
+  },
   ui: {
     fonts: false
   },
