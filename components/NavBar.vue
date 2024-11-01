@@ -2,14 +2,21 @@
   <div class="border-b-1 border-zinc-200">
     <div class="flex justify-between items-center max-w-[1200px] m-auto h-[60px]">
       <div class="h-[40px] flex items-center cursor-pointer">
-        <img src="/assets/images/logo.png" class="w-full h-full" />
+        <img v-if="$colorMode.preference == 'dark'" src="/assets/images/logo.png" class="w-full h-full" />
+        <img v-else src="/assets/images/logo1.png" class="w-full h-full" />
       </div>
       <div class="pr-2 flex items-center">
-        <UButton icon="lucide:sun" size="xl" variant="ghost" class="cursor-pointer" color="neutral" @click="handleLight" />
-        <UButton icon="lucide:moon" size="xl" variant="ghost" class="cursor-pointer" color="neutral" @click="handleDark" />
-        <UButton icon="ion:extension-puzzle-outline" size="xl" variant="ghost" class="cursor-pointer" color="neutral" />
-        <UButton icon="ion:notifications" size="xl" variant="ghost" class="cursor-pointer" color="neutral" />
-        <UButton icon="logos:github-icon" size="xl" variant="ghost" class="cursor-pointer" color="neutral" to="https://www.baidu.com" target="_black" />
+        <UButton :icon="!isDarkMode ? 'lucide:sun' : 'lucide:moon'" variant="ghost" class="cursor-pointer text-[22px] mr-1" color="neutral" @click="toggleTheme" />
+        <!-- <UPopover>
+          <UButton icon="i-heroicons-swatch" size="xl" variant="ghost" class="cursor-pointer mr-1" color="neutral" />
+          <template #content>
+            <Placeholder class="size-48 m-4 inline-flex" />
+          </template>
+        </UPopover> -->
+        <UChip :text="5" size="3xl" inset color="error">
+          <UButton icon="ion:notifications" variant="ghost" class="cursor-pointer text-[22px]" color="neutral" />
+        </UChip>
+        <UButton icon="uiw:github" variant="ghost" class="cursor-pointer text-[22px] ml-2" color="neutral" :to="appConfig.github" target="_black" />
 
         <UDropdownMenu :items="items" class="w-48">
           <UAvatar src="https://foruda.gitee.com/avatar/1677152235246657276/8845783_w857669126_1640567606.png" class="ml-3 cursor-pointer" />
@@ -28,19 +35,17 @@
 
 <script setup>
 const colorMode = useColorMode()
-const currentMode = ref('')
-currentMode.value = colorMode.preference
-// colorMode.value = 'light'
-console.log('colorMode', colorMode)
+const isDarkMode = ref(false)
+const appConfig = useAppConfig()
 
-const handleLight = () => {
-  colorMode.preference = 'light'
-  colorMode.value = 'light'
-}
+onMounted(() => {
+  // 在客户端设置颜色模式，避免SSR不一致的问题
+  isDarkMode.value = colorMode.preference === 'dark'
+})
 
-const handleDark = () => {
-  colorMode.preference = 'dark'
-  colorMode.value = 'dark'
+const toggleTheme = () => {
+  colorMode.preference = isDarkMode.value ? 'light' : 'dark'
+  isDarkMode.value = !isDarkMode.value
 }
 
 const items = ref([
@@ -123,3 +128,5 @@ const items = ref([
   ]
 ])
 </script>
+
+<style></style>

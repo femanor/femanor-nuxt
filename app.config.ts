@@ -2,6 +2,7 @@
 export default defineAppConfig({
   title: 'Hello Nuxt',
   helloMessage: '欢迎回来，前端庄园技术社区',
+  github: 'https://github.com/femanor/femanor-nuxt',
   theme: {
     dark: true,
     colors: {
@@ -9,6 +10,10 @@ export default defineAppConfig({
     }
   },
   ui: {
+    colors: {
+      primary: 'blue',
+      neutral: 'zinc'
+    },
     button: {
       variants: {
         size: {
