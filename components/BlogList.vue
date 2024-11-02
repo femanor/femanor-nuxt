@@ -1,6 +1,14 @@
 <template>
   <div class="container mx-auto px-4 py-8 max-w-[1200px]">
     <div class="space-y-4">
+      <div class="flex items-center gap-4">
+        <!-- <div class="grid gap-2">
+          <USkeleton class="h-4 w-[250px]" />
+          <USkeleton class="h-4 w-[200px]" />
+          <USkeleton class="h-4 w-[500px]" />
+          <USkeleton class="h-4 w-[100px]" />
+        </div> -->
+      </div>
       <UCard class="transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1] cursor-pointer" v-for="item in bloglist">
         <div class="flex flex-row items-center justify-between space-y-0 pb-2">
           <div class="text-2xl font-bold">{{ item.title }}</div>

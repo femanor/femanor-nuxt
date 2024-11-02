@@ -20,8 +20,8 @@
         <UButton class="cursor-pointer" icon="i-heroicons-rocket-launch" color="success" v-if="!isLogin" @click="handleLogin">登录</UButton>
 
         <UDropdownMenu :items="items" class="w-48" v-else>
-          <UAvatar src="https://foruda.gitee.com/avatar/1677152235246657276/8845783_w857669126_1640567606.png" class="ml-3 cursor-pointer" />
-
+          <UAvatar src="https://github.com/benjamincanac.png" class="ml-3 cursor-pointer" />
+          <!-- icon="lucide:user-round" -->
           <template #profile="{ item }">
             <div class="flex items-center flex-1" @click="handleExit">
               <UIcon name="i-heroicons-arrow-right-on-rectangle" class="mr-2 text-[var(--ui-text-muted)] hover:text-black" />
