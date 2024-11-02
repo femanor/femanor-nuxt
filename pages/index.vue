@@ -19,13 +19,13 @@ if (!isLogin.value) {
   navigateTo('/login')
 }
 if (!hello.value) {
-  ins?.proxy?.$toast('你好' + userName.value, appConfig.helloMessage)
   hello.value = true
+  ins?.proxy?.$toast('你好' + userName.value, appConfig.helloMessage, 'success')
 }
 
 const handleExit = () => {
   store.logout()
   router.push('/login')
-  ins?.proxy?.$toast('退出登录成功', '', 'info')
+  ins?.proxy?.$toast('退出登录成功', '', 'error')
 }
 </script>
