@@ -16,13 +16,14 @@
         <UChip :text="5" size="3xl" inset color="error">
           <UButton icon="ion:notifications" variant="ghost" class="cursor-pointer text-[22px]" color="neutral" />
         </UChip>
-        <UButton icon="uiw:github" variant="ghost" class="cursor-pointer text-[22px] ml-2" color="neutral" :to="appConfig.github" target="_black" />
+        <UButton icon="uiw:github" variant="ghost" class="cursor-pointer text-[22px] ml-2 mr-2" color="neutral" :to="appConfig.github" target="_black" />
+        <UButton class="cursor-pointer" icon="i-heroicons-rocket-launch" color="success" v-if="!isLogin" @click="handleLogin">登录</UButton>
 
-        <UDropdownMenu :items="items" class="w-48">
+        <UDropdownMenu :items="items" class="w-48" v-else>
           <UAvatar src="https://foruda.gitee.com/avatar/1677152235246657276/8845783_w857669126_1640567606.png" class="ml-3 cursor-pointer" />
 
           <template #profile="{ item }">
-            <div class="flex items-center flex-1" @click="console.log('11222333')">
+            <div class="flex items-center flex-1" @click="handleExit">
               <UIcon name="i-heroicons-arrow-right-on-rectangle" class="mr-2 text-[var(--ui-text-muted)] hover:text-black" />
               <div class="self-start">{{ item.label }}</div>
             </div>
@@ -34,19 +35,14 @@
 </template>
 
 <script setup>
+const ins = getCurrentInstance()
 const colorMode = useColorMode()
 const isDarkMode = ref(false)
 const appConfig = useAppConfig()
+const router = useRouter()
+const store = useUser()
 
-onMounted(() => {
-  // 在客户端设置颜色模式，避免SSR不一致的问题
-  isDarkMode.value = colorMode.preference === 'dark'
-})
-
-const toggleTheme = () => {
-  colorMode.preference = isDarkMode.value ? 'light' : 'dark'
-  isDarkMode.value = !isDarkMode.value
-}
+const { isLogin, hello, userName } = storeToRefs(store)
 
 const items = ref([
   [
@@ -127,6 +123,26 @@ const items = ref([
     }
   ]
 ])
+
+onMounted(() => {
+  // 在客户端设置颜色模式，避免SSR不一致的问题
+  isDarkMode.value = colorMode.preference === 'dark'
+})
+
+const toggleTheme = () => {
+  colorMode.preference = isDarkMode.value ? 'light' : 'dark'
+  isDarkMode.value = !isDarkMode.value
+}
+
+const handleLogin = () => {
+  router.push('/login')
+}
+
+const handleExit = () => {
+  store.logout()
+  router.push('/login')
+  ins?.proxy?.$toast('退出登录成功', '', 'error')
+}
 </script>
 
 <style></style>
