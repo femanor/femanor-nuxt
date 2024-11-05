@@ -44,8 +44,12 @@ export default defineNuxtConfig({
       }
     ],
     'pinia-plugin-persistedstate/nuxt',
-    '@nuxthub/core'
+    '@nuxthub/core',
+    'nuxt-tiptap-editor'
   ],
+  tiptap: {
+    prefix: 'Tiptap', //prefix for Tiptap imports, composables not included
+  },
   hub: {
     // NuxtHub options
   },

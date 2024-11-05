@@ -18,6 +18,7 @@
 - UI : [NuxtUI](https://ui3.nuxt.dev)、[Element Plus](https://element-plus.org/zh-CN/guide/quickstart.html)
 - CSS : [tailwindcss](https://tailwindcss.com)
 - icon : [icones](https://icones.js.org/)
+- 编辑器：[TipTap](https://tiptap.dev/docs)
 
 ## 快速开始
 
