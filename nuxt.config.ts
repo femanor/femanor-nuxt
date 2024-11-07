@@ -25,6 +25,16 @@ export default defineNuxtConfig({
       appName: '前端庄园'
     }
   },
+  auth: {
+    isEnabled: true,
+    baseURL: process.env.AUTH_ORIGIN,
+    provider: {
+      type: 'authjs'
+    },
+    globalAppMiddleware: {
+      isEnabled: true
+    }
+  },
   // 配置自动导入
   imports: {
     dirs: ['store/*']
@@ -45,7 +55,8 @@ export default defineNuxtConfig({
     ],
     'pinia-plugin-persistedstate/nuxt',
     '@nuxthub/core',
-    'nuxt-tiptap-editor'
+    'nuxt-tiptap-editor',
+    '@sidebase/nuxt-auth'
   ],
   tiptap: {
     prefix: 'Tiptap' //prefix for Tiptap imports, composables not included
@@ -56,5 +67,5 @@ export default defineNuxtConfig({
   ui: {
     fonts: false
   },
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css', '~/assets/css/editor.css']
 })
