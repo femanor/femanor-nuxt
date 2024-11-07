@@ -10,7 +10,7 @@
 
     <!-- <UButton class="cursor-pointer" size="xl" color="neutral" :variant="editor.isActive('bold') ? 'soft' : 'ghost'" @click="editor.chain().focus().unsetAllMarks().run()">clear marks</UButton>
     <UButton class="cursor-pointer" size="xl" color="neutral" :variant="editor.isActive('bold') ? 'soft' : 'ghost'" @click="editor.chain().focus().clearNodes().run()">clear nodes</UButton> -->
-    <UButton class="cursor-pointer" size="xl" color="neutral" :variant="editor.isActive('paragraph') ? 'soft' : 'ghost'" icon="ri:paragraph" @click="editor.chain().focus().setParagraph().run()"></UButton>
+    <!-- <UButton class="cursor-pointer" size="xl" color="neutral" :variant="editor.isActive('paragraph') ? 'soft' : 'ghost'" icon="ri:paragraph" @click="editor.chain().focus().setParagraph().run()"></UButton> -->
 
     <UButton class="cursor-pointer" size="xl" color="neutral" :variant="editor.isActive('heading', { level: 1 }) ? 'soft' : 'ghost'" icon="ri:h-1" @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"></UButton>
     <UButton class="cursor-pointer" size="xl" color="neutral" :variant="editor.isActive('heading', { level: 2 }) ? 'soft' : 'ghost'" icon="ri:h-2" @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"></UButton>

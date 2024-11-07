@@ -18,4 +18,6 @@ useHead({
 <style>
 @import 'tailwindcss';
 @import '@nuxt/ui';
+
+@plugin "@tailwindcss/typography";
 </style>
