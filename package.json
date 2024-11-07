@@ -8,7 +8,8 @@
     "deploy": "npx nuxthub deploy",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "db:push": "pnpx prisma db push"
   },
   "dependencies": {
     "@nuxt/icon": "^1.5.6",
@@ -16,9 +17,9 @@
     "@nuxthub/core": "^0.8.4",
     "@nuxtjs/color-mode": "^3.5.2",
     "@pinia/nuxt": "^0.5.5",
+    "@prisma/nuxt": "^0.0.35",
     "@sidebase/nuxt-auth": "^0.9.4",
     "@tiptap/extension-placeholder": "^2.9.1",
-    "next-auth": "^4.21.1",
     "nuxt": "^3.13.0",
     "nuxt-tiptap-editor": "^2.0.0",
     "pinia": "^2.2.4",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.10",
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "@prisma/client": "^5.22.0",
     "@tailwindcss/typography": "^0.5.15"
   }
 }

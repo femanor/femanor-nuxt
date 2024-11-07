@@ -2,6 +2,9 @@
 // 覆盖或扩展 Nuxt 配置
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
+  experimental: {
+    componentIslands: true
+  },
   // 全局配置页头信息
   app: {
     head: {
@@ -32,7 +35,7 @@ export default defineNuxtConfig({
       type: 'authjs'
     },
     globalAppMiddleware: {
-      isEnabled: true
+      isEnabled: false
     }
   },
   // 配置自动导入
@@ -56,8 +59,17 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate/nuxt',
     '@nuxthub/core',
     'nuxt-tiptap-editor',
-    '@sidebase/nuxt-auth'
+    '@sidebase/nuxt-auth',
+    '@prisma/nuxt'
   ],
+  // additional config
+  vite: {
+    resolve: {
+      alias: {
+        '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js'
+      }
+    }
+  },
   tiptap: {
     prefix: 'Tiptap' //prefix for Tiptap imports, composables not included
   },

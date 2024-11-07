@@ -1,5 +1,6 @@
 <template>
   <div class="">个人中心</div>
+  <Person />
   <ClientOnly fallback-tag="span">
     <div>1122</div>
     <template #fallback>
