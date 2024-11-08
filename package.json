@@ -29,6 +29,11 @@
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.10",
+    "@iconify-json/heroicons": "^1.2.1",
+    "@iconify-json/ion": "^1.2.1",
+    "@iconify-json/lucide": "^1.2.12",
+    "@iconify-json/material-symbols": "^1.2.6",
+    "@iconify-json/ri": "^1.2.3",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@prisma/client": "^5.22.0",
     "@tailwindcss/typography": "^0.5.15"

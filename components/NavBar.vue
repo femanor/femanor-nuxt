@@ -16,7 +16,7 @@
         <UChip :text="5" size="3xl" inset color="error">
           <UButton icon="ion:notifications" variant="ghost" class="cursor-pointer text-[22px]" color="neutral" />
         </UChip>
-        <UButton icon="uiw:github" variant="ghost" class="cursor-pointer text-[22px] ml-2 mr-2" color="neutral" :to="appConfig.github" target="_black" />
+        <UButton icon="ri:github-fill" variant="ghost" class="cursor-pointer text-[22px] ml-2 mr-2" color="neutral" :to="appConfig.github" target="_black" />
         <UButton class="cursor-pointer" icon="i-heroicons-rocket-launch" color="success" v-if="!isLogin" @click="handleLogin">登录</UButton>
 
         <UDropdownMenu :items="items" class="w-48" v-else>
