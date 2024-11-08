@@ -1,6 +1,6 @@
 <template>
   <div class="min-w-[800px]">
-    <!-- <NavBar></NavBar> -->
+    <NavBar></NavBar>
     <slot />
   </div>
 </template>

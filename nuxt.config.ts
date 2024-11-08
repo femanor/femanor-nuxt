@@ -57,24 +57,19 @@ export default defineNuxtConfig({
       }
     ],
     'pinia-plugin-persistedstate/nuxt',
-    '@nuxthub/core',
     'nuxt-tiptap-editor',
-    '@sidebase/nuxt-auth',
-    '@prisma/nuxt'
+    '@sidebase/nuxt-auth'
   ],
   // additional config
-  vite: {
-    resolve: {
-      alias: {
-        '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js'
-      }
-    }
-  },
+  // vite: {
+  //   resolve: {
+  //     alias: {
+  //       '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js'
+  //     }
+  //   }
+  // },
   tiptap: {
     prefix: 'Tiptap' //prefix for Tiptap imports, composables not included
-  },
-  hub: {
-    // NuxtHub options
   },
   ui: {
     fonts: false
