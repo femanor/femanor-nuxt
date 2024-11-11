@@ -18,8 +18,8 @@ const appConfig = useAppConfig()
 //   navigateTo('/login')
 // }
 
-if (!hello.value && isLogin.value) {
-  hello.value = true
-  ins?.proxy?.$toast('你好' + userName.value, appConfig.helloMessage, 'success')
-}
+// if (!hello.value && isLogin.value) {
+//   hello.value = true
+//   ins?.proxy?.$toast('你好' + userName.value, appConfig.helloMessage, 'success')
+// }
 </script>

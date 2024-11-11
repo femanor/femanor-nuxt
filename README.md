@@ -21,6 +21,7 @@
 - Icon : [icones](https://icones.js.org/)
 - ORM : [Prisma](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/prisma-nuxt-module?utm_source=nuxt.com&utm_medium=aside-module&utm_campaign=nuxt.com)、[@prisma/nuxt](https://nuxt.com/modules/prisma)
 - 编辑器：[TipTap](https://tiptap.dev/docs)
+- auth : [@sidebase/nuxt-auth](https://nuxt.com/modules/sidebase-auth)
 
 ## 快速开始
 

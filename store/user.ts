@@ -11,6 +11,7 @@ export const useUser = defineStore('user', {
     logout() {
       this.isLogin = false
       this.hello = false
+      this.userName = ''
     }
   },
   persist: true

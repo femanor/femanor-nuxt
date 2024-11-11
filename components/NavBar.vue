@@ -17,10 +17,9 @@
           <UButton icon="ion:notifications" variant="ghost" class="cursor-pointer text-[22px]" color="neutral" />
         </UChip>
         <UButton icon="ri:github-fill" variant="ghost" class="cursor-pointer text-[22px] ml-2 mr-2" color="neutral" :to="appConfig.github" target="_black" />
-        <UButton class="cursor-pointer" icon="i-heroicons-rocket-launch" color="success" v-if="!isLogin" @click="handleLogin">登录</UButton>
-
+        <UButton class="cursor-pointer" icon="i-heroicons-rocket-launch" color="success" v-if="status !== 'authenticated'" @click="handleLogin">登录</UButton>
         <UDropdownMenu :items="items" class="w-48" v-else>
-          <UAvatar src="https://github.com/benjamincanac.png" class="ml-3 cursor-pointer" />
+          <UAvatar :src="data?.user?.image" class="ml-3 cursor-pointer" />
           <!-- icon="lucide:user-round" -->
           <template #profile="{ item }">
             <div class="flex items-center flex-1" @click="handleExit">
@@ -42,6 +41,7 @@ const appConfig = useAppConfig()
 const router = useRouter()
 const store = useUser()
 
+const { status, data, signOut, signIn } = useAuth()
 const { isLogin, hello, userName } = storeToRefs(store)
 
 const items = ref([
@@ -127,6 +127,17 @@ const items = ref([
 onMounted(() => {
   // 在客户端设置颜色模式，避免SSR不一致的问题
   isDarkMode.value = colorMode.preference === 'dark'
+
+  console.log('status', data.value)
+
+  console.log('isLoginisLogin', isLogin.value)
+
+  if (status.value === 'authenticated') {
+    if (!hello.value && isLogin.value) {
+      hello.value = true
+      ins?.proxy?.$toast('你好 ' + data.value.user?.name, appConfig.helloMessage, 'success')
+    }
+  }
 })
 
 const toggleTheme = () => {
@@ -135,13 +146,15 @@ const toggleTheme = () => {
 }
 
 const handleLogin = () => {
-  router.push('/login')
+  signIn()
+  store.login()
+  // router.push('/login')
 }
 
 const handleExit = () => {
+  signOut({ callbackUrl: '/' })
   store.logout()
-  router.push('/login')
-  ins?.proxy?.$toast('退出登录成功', '', 'error')
+  // router.push('/login')
 }
 </script>
 

@@ -29,11 +29,13 @@ export default defineNuxtConfig({
     }
   },
   auth: {
+    // 是否启用此模块
     isEnabled: true,
-    baseURL: process.env.AUTH_ORIGIN,
+    baseURL: process.env.AUTH_BASE_URL,
     provider: {
       type: 'authjs'
     },
+    // 是否添加保护所有页面的全局身份验证中间件
     globalAppMiddleware: {
       isEnabled: false
     }
