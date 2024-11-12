@@ -62,14 +62,6 @@ export default defineNuxtConfig({
     'nuxt-tiptap-editor',
     '@sidebase/nuxt-auth'
   ],
-  // additional config
-  // vite: {
-  //   resolve: {
-  //     alias: {
-  //       '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js'
-  //     }
-  //   }
-  // },
   tiptap: {
     prefix: 'Tiptap' //prefix for Tiptap imports, composables not included
   },

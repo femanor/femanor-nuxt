@@ -15,9 +15,4 @@ useHead({
 })
 </script>
 
-<style>
-@import 'tailwindcss';
-@import '@nuxt/ui';
-
-@plugin "@tailwindcss/typography";
-</style>
+<style></style>

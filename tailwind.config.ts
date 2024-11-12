@@ -6,6 +6,5 @@ export default <Partial<Config>>{
     extend: {
       colors: {}
     }
-  },
-  plugins: [require('@tailwindcss/typography')]
+  }
 }
