@@ -23,6 +23,21 @@
 - 编辑器：[TipTap](https://tiptap.dev/docs)
 - auth : [@sidebase/nuxt-auth](https://nuxt.com/modules/sidebase-auth)
 
+## 常见问题
+
+### 1. Github 无法访问
+
+> Windows 系统下的 hosts 文件路径为 `C:\Windows\System32\drivers\etc\hosts`，Mac 系统下的 hosts 文件路径为 `/etc/hosts`
+
+- 访问[站长工具](https://tool.chinaz.com/dns/github.com) DNS 查询 `github.com` 找到 TTL 值小的，复制对应的 ip 地址
+- 把赋值的 ip 地址添加到 hosts 文件中，例如：`140.82.114.4 github.com`
+- Windows 系统下，在 cmd 中运行 `ipconfig/flushdns` 命令，Mac 系统下，在终端中运行 `sudo killall -HUP mDNSResponder` 命令
+
+亦或参考如下网址
+
+- [GitHub520](https://gitee.com/klmahuaw/GitHub520)
+- [GitHub Host Start](https://gitlab.com/ineo6/hosts/-/raw/master/next-hosts)
+
 ## 快速开始
 
 ### 安装依赖
