@@ -44,24 +44,16 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['store/*']
   },
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/icon',
-    '@element-plus/nuxt',
-    [
-      '@pinia/nuxt',
-      {
-        autoImports: [
-          // 自动引入 `defineStore(), storeToRefs()`
-          'defineStore',
-          'storeToRefs'
-        ]
-      }
-    ],
-    'pinia-plugin-persistedstate/nuxt',
-    'nuxt-tiptap-editor',
-    '@sidebase/nuxt-auth'
-  ],
+  modules: ['@nuxt/ui', '@nuxt/icon', '@element-plus/nuxt', [
+    '@pinia/nuxt',
+    {
+      autoImports: [
+        // 自动引入 `defineStore(), storeToRefs()`
+        'defineStore',
+        'storeToRefs'
+      ]
+    }
+  ], 'pinia-plugin-persistedstate/nuxt', 'nuxt-tiptap-editor', '@sidebase/nuxt-auth', '@nuxt/scripts'],
   tiptap: {
     prefix: 'Tiptap' //prefix for Tiptap imports, composables not included
   },

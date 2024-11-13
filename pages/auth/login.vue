@@ -16,6 +16,36 @@ definePageMeta({
 })
 
 const { status, data, signOut, signIn } = useAuth()
+
+export interface JSConfettiApi {
+  JSConfetti: {
+    new (): {
+      addConfetti: (options?: { emojis: string[] }) => void
+    }
+  }
+}
+
+declare global {
+  interface Window extends JSConfettiApi {}
+}
+
+const { onLoaded } = useScriptNpm<JSConfettiApi>({
+  packageName: 'js-confetti',
+  file: 'dist/js-confetti.browser.js',
+  version: '0.12.0',
+  scriptOptions: {
+    use() {
+      return { JSConfetti: window.JSConfetti }
+    }
+  }
+})
+onMounted(() => {
+  onLoaded(({ JSConfetti }) => {
+    const confetti = new JSConfetti()
+    // fully typed!
+    confetti.addConfetti({ emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'] })
+  })
+})
 </script>
 
 <style scoped></style>
