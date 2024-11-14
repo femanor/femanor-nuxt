@@ -43,51 +43,18 @@
 ### 安装依赖
 
 ```bash
-# npm
-npm install
-
 # pnpm
 pnpm install
-
-# yarn
-yarn install
 ```
 
-### 开发环境
-
+### 生成 Prisma Client
 ```bash
-# npm
-npm run dev
-
 # pnpm
-pnpm run dev
-
-# yarn
-yarn dev
+pnpx prisma generate
 ```
 
-### 生产环境
-
+### 启动项目
 ```bash
-# npm
-npm run build
-
 # pnpm
-pnpm run build
-
-# yarn
-yarn build
-```
-
-### 本地预览
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
+pnpm dev
 ```
